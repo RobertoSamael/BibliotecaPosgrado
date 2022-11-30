@@ -1,0 +1,93 @@
+/* Navbar section */
+.navbar {
+    height: 10%;
+    background-color: #4D4259;
+    border-bottom: solid 2px #685978;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+.logotec {
+    width: 40px;
+    height: 50px;
+    margin-right: 50px;
+    border-radius: 5px;
+}
+.seccionlogo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.bibliotecaposgrado {
+    color: white;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+.logoutbutton {
+    color: white;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.logoutbutton:hover {
+    color: #a796bb;
+}
+
+/* Table Section */
+@media (max-width: 768px) {
+    .tablesection {
+        padding-inline: 20px !important;
+        box-sizing: border-box;
+    }
+}
+.tablesection {
+    height: 100%;
+    padding-inline: 60px;
+    padding-block: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.topsection {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+.botsection {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.search {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.add {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.MuiButton-containedSecondary:hover {
+    color: white;
+}
+.rowcomp {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.rowcomp:hover {
+    background-color: #685978;
+}
