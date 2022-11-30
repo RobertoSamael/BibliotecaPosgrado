@@ -1,7 +1,7 @@
-import { Box, FormControl, InputLabel, MenuItem, Modal, Select, TextField, Typography, useMediaQuery } from '@mui/material'
+import { Box, FormControl, InputLabel, MenuItem, Modal, OutlinedInput, Select, TextField, Typography, useMediaQuery } from '@mui/material'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { libroSelected } from '../features/slice/BookSlice';
+import { libroSelected, setCategoriaFiltrada, setLibrosFiltrados } from '../features/slice/BookSlice';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 
@@ -27,6 +27,7 @@ const style = {
 export default function TableSection() {
 
   const smallSc = useMediaQuery('(max-width: 768px)')
+  const [categoria, setCategoria] = React.useState("");
 
   const [openBook, setOpenBook] = React.useState(false);
   const handleOpenBook = () => setOpenBook(true);
@@ -38,14 +39,32 @@ export default function TableSection() {
   return (
     <div className='tablesection'>
               { smallSc ? 
-          <TextField
-            id="standard-search"
-            label="Buscar"
-            type="search"
-            variant="standard"
-            color='secondary'
-            sx={{width: '250px'}}
-          /> : null }
+                  <Box display={'flex'} alignItems={'center'} gap={2}>
+                  <FormControl size='small' sx={{width: '200px'}} color="secondary">
+                    <InputLabel id="demo-multiple-select-label">Categoria</InputLabel>
+                    <Select
+                      labelId="demo-multiple-select-label"
+                      id="demo-multiple-select"
+                      value={categoria}
+                      label="Categoria"
+                      onChange={(e) => {dispatch(setCategoriaFiltrada(e.target.value)); setCategoria(e.target.value);}}
+                    >
+                      <MenuItem value={"Programacion"}>Programacion</MenuItem>
+                      <MenuItem value={"Quimica"}>Quimica</MenuItem>
+                      <MenuItem value={"Mecanica"}>Mecanica</MenuItem>
+                      <MenuItem value={"Matematicas"}>Matematicas</MenuItem>
+                    </Select>
+                    </FormControl>
+                    <FormControl size='small' sx={{width: '300px'}} color="secondary">
+                    <InputLabel id="demo-simple-input-label">Buscar</InputLabel>
+                      <OutlinedInput
+                        id="standard-search"
+                        label="Buscar"
+                        type="search"
+                        onChange={e => dispatch(setLibrosFiltrados(e.target.value))}
+                        />
+                    </FormControl>
+                  </Box> : null }
         <div className='botsection'>
           <Box width={'100%'} height={'10%'} borderBottom={'solid 2px #685978'} display={'flex'} alignItems={'center'}>
             <Typography variant='body1' width={'100%'} fontSize={13} color={'white'} fontFamily={'Montserrat'} fontWeight={'bold'}>NOMBRE</Typography>
