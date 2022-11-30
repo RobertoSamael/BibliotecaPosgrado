@@ -28,10 +28,6 @@ export default function TableSection() {
 
   const smallSc = useMediaQuery('(max-width: 768px)')
 
-  useEffect(() => {
-
-  },[])
-
   const [openBook, setOpenBook] = React.useState(false);
   const handleOpenBook = () => setOpenBook(true);
   const handleCloseBook = () => setOpenBook(false);
@@ -60,7 +56,7 @@ export default function TableSection() {
             <Typography variant='body1' align='center' width={'50%'} fontSize={13} color={'white'} fontFamily={'Montserrat'} fontWeight={'bold'}>DISPONIBLE</Typography>
           </Box>
           {/* Componentes */}
-          {!states.librosfiltrados ? states.libros.map((book, index) => (
+          {states.librosfiltrados.length <= 0  ? states.libros.map((book, index) => (
             <Box key={book._id} width={'100%'} height={'50px'} onClick={() => dispatch(libroSelected(index))}>
               <RowComponent openbook={handleOpenBook} nombre={book.title} categoria={book.category[0].title} fecha={book._createdAt.slice(0, 10)} disponible={book.disponible}/>
             </Box>
@@ -103,7 +99,7 @@ export default function TableSection() {
           </Box>
         </Modal>
         {/* Libros filtrados modal */}
-        {states.librosfiltrados ?
+        {states.librosfiltrados.length >= 1 ?
         <Modal
         open={openBook}
         onClose={handleCloseBook}

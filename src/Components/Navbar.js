@@ -9,6 +9,8 @@ export default function Navbar() {
 
   const smallSc = useMediaQuery('(max-width: 768px)')
 
+  const [categoria, setCategoria] = React.useState("");
+
   const dispatch = useDispatch()
 
   const states = useSelector(state => state.books)
@@ -27,9 +29,9 @@ export default function Navbar() {
             <Select
               labelId="demo-multiple-select-label"
               id="demo-multiple-select"
-              value={""}
+              value={categoria}
               label="Categoria"
-              onChange={e => dispatch(setCategoriaFiltrada(e.target.value))}
+              onChange={(e) => {dispatch(setCategoriaFiltrada(e.target.value)); setCategoria(e.target.value);}}
             >
               <MenuItem value={"Programacion"}>Programacion</MenuItem>
               <MenuItem value={"Quimica"}>Quimica</MenuItem>
