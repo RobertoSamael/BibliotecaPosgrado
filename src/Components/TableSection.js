@@ -67,7 +67,7 @@ export default function TableSection() {
                         />
                     </FormControl>
                   </Box> : null }
-          <Box width={'100%'} height={'10%'} borderBottom={'solid 2px #685978'} display={'flex'} alignItems={'center'} paddingRight={'30px'} boxSizing={'border-box'}>
+          <Box width={'100%'} height={'10%'} borderBottom={'solid 2px #685978'} display={'flex'} alignItems={'center'}>
             <Typography variant='body1' width={'100%'} fontSize={13} color={'white'} fontFamily={'Montserrat'} fontWeight={'bold'}>NOMBRE</Typography>
             <Typography variant='body1' align='center' width={'50%'} fontSize={13} color={'white'} fontFamily={'Montserrat'} fontWeight={'bold'}>CATEGORÍA</Typography>
             { !smallSc ? 
