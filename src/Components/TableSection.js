@@ -41,18 +41,18 @@ export default function TableSection() {
               { smallSc ? 
                   <Box display={'flex'} alignItems={'center'} gap={2}>
                   <FormControl size='small' sx={{width: '200px'}} color="secondary">
-                    <InputLabel id="demo-multiple-select-label">Categoria</InputLabel>
+                    <InputLabel id="demo-multiple-select-label">Categoría</InputLabel>
                     <Select
                       labelId="demo-multiple-select-label"
                       id="demo-multiple-select"
                       value={categoria}
-                      label="Categoria"
+                      label="Categoría"
                       onChange={(e) => {dispatch(setCategoriaFiltrada(e.target.value)); setCategoria(e.target.value);}}
                     >
-                      <MenuItem value={"Programacion"}>Programacion</MenuItem>
-                      <MenuItem value={"Quimica"}>Quimica</MenuItem>
-                      <MenuItem value={"Mecanica"}>Mecanica</MenuItem>
-                      <MenuItem value={"Matematicas"}>Matematicas</MenuItem>
+                      <MenuItem value={"Programación"}>Programación</MenuItem>
+                      <MenuItem value={"Química"}>Química</MenuItem>
+                      <MenuItem value={"Mecánica"}>Mecánica</MenuItem>
+                      <MenuItem value={"Matemáticas"}>Matemáticas</MenuItem>
                     </Select>
                     </FormControl>
                     <FormControl size='small' sx={{width: '300px'}} color="secondary">
@@ -65,15 +65,15 @@ export default function TableSection() {
                         />
                     </FormControl>
                   </Box> : null }
-        <div className='botsection'>
-          <Box width={'100%'} height={'10%'} borderBottom={'solid 2px #685978'} display={'flex'} alignItems={'center'}>
+          <Box width={'100%'} height={'10%'} borderBottom={'solid 2px #685978'} display={'flex'} alignItems={'center'} paddingRight={'30px'} boxSizing={'border-box'}>
             <Typography variant='body1' width={'100%'} fontSize={13} color={'white'} fontFamily={'Montserrat'} fontWeight={'bold'}>NOMBRE</Typography>
-            <Typography variant='body1' align='center' width={'50%'} fontSize={13} color={'white'} fontFamily={'Montserrat'} fontWeight={'bold'}>CATEGORIA</Typography>
+            <Typography variant='body1' align='center' width={'50%'} fontSize={13} color={'white'} fontFamily={'Montserrat'} fontWeight={'bold'}>CATEGORÍA</Typography>
             { !smallSc ? 
             <Typography variant='body1' align='center' width={'50%'} fontSize={13} color={'white'} fontFamily={'Montserrat'} fontWeight={'bold'}>FECHA DE REGISTRO</Typography>
             : null }
             <Typography variant='body1' align='center' width={'50%'} fontSize={13} color={'white'} fontFamily={'Montserrat'} fontWeight={'bold'}>DISPONIBLE</Typography>
           </Box>
+        <div className='botsection'>
           {/* Componentes */}
           {states.librosfiltrados.length <= 0  ? states.libros.map((book, index) => (
             <Box key={book._id} width={'100%'} height={'50px'} onClick={() => dispatch(libroSelected(index))}>

@@ -25,18 +25,18 @@ export default function Navbar() {
         { !smallSc ? 
         <Box display={'flex'} alignItems={'center'} gap={2}>
           <FormControl size='small' sx={{width: '200px'}} color="secondary">
-            <InputLabel id="demo-multiple-select-label">Categoria</InputLabel>
+            <InputLabel id="demo-multiple-select-label">Categoría</InputLabel>
             <Select
               labelId="demo-multiple-select-label"
               id="demo-multiple-select"
               value={categoria}
-              label="Categoria"
+              label="Categoría"
               onChange={(e) => {dispatch(setCategoriaFiltrada(e.target.value)); setCategoria(e.target.value);}}
             >
-              <MenuItem value={"Programacion"}>Programacion</MenuItem>
-              <MenuItem value={"Quimica"}>Quimica</MenuItem>
-              <MenuItem value={"Mecanica"}>Mecanica</MenuItem>
-              <MenuItem value={"Matematicas"}>Matematicas</MenuItem>
+              <MenuItem value={"Programación"}>Programación</MenuItem>
+              <MenuItem value={"Química"}>Química</MenuItem>
+              <MenuItem value={"Mecánica"}>Mecánica</MenuItem>
+              <MenuItem value={"Matemáticas"}>Matemáticas</MenuItem>
             </Select>
             </FormControl>
             <FormControl size='small' sx={{width: '300px'}} color="secondary">
