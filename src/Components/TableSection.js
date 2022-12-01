@@ -53,6 +53,8 @@ export default function TableSection() {
                       <MenuItem value={"Química"}>Química</MenuItem>
                       <MenuItem value={"Mecánica"}>Mecánica</MenuItem>
                       <MenuItem value={"Matemáticas"}>Matemáticas</MenuItem>
+                      <MenuItem value={"Electrónica"}>Electrónica</MenuItem>
+                      <MenuItem value={"Ciencias"}>Ciencias</MenuItem>
                     </Select>
                     </FormControl>
                     <FormControl size='small' sx={{width: '300px'}} color="secondary">
