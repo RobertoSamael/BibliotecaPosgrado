@@ -107,7 +107,11 @@ export default function TableSection() {
               <Box width={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'}><CheckCircleIcon color={'success'}/></Box>
                : <Box width={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'}><CancelIcon color='error'/></Box>}</Typography>
               </Box>
-              <Typography variant={'body'} fontSize={14} fontFamily={'Roboto'} fontWeight={'bold'}>Fecha de Registro: <Typography component={'span'} variant={'body'} fontSize={14} fontFamily={'Roboto'} fontWeight={'bold'}>{states.libros[states.selectedLibro]._createdAt.slice(0, 10)}</Typography></Typography>
+              <Typography variant={'body'} fontSize={14} fontFamily={'Roboto'} fontWeight={'bold'}>Fecha de Registro: 
+                <Typography component={'span'} variant={'body'} fontSize={14} fontFamily={'Roboto'} fontWeight={'bold'}>
+                  {states.libros[states.selectedLibro]._createdAt.slice(0, 10)}
+                </Typography>
+              </Typography>
               {states.libros[states.selectedLibro].alumno.length > 0 ?
               <Box width={'100%'} display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
                 <Typography variant={'body'} fontSize={14} fontFamily={'Roboto'} fontWeight={'bold'}>Nombre del Alumno:</Typography>
@@ -139,7 +143,11 @@ export default function TableSection() {
               <Box width={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'}><CheckCircleIcon color={'success'}/></Box>
                : <Box width={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'}><CancelIcon color='error'/></Box>}</Typography>
               </Box>
-              <Typography variant={'body'} fontSize={14} fontFamily={'Roboto'} fontWeight={'bold'}>Fecha de Registro: <Typography component={'span'} variant={'body'} fontSize={14} fontFamily={'Roboto'} fontWeight={'bold'}>{states.librosfiltrados[states.selectedLibro]._createdAt.slice(0, 10)}</Typography></Typography>
+              <Typography variant={'body'} fontSize={14} fontFamily={'Roboto'} fontWeight={'bold'}>Fecha de Registro: 
+                <Typography component={'span'} variant={'body'} fontSize={14} fontFamily={'Roboto'} fontWeight={'bold'}>
+                  {states.librosfiltrados[states.selectedLibro]._createdAt.slice(0, 10)}
+                  </Typography>
+                </Typography>
               {states.librosfiltrados[states.selectedLibro].alumno.length > 0 ?
               <Box width={'100%'} display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
                 <Typography variant={'body'} fontSize={14} fontFamily={'Roboto'} fontWeight={'bold'}>Nombre del Alumno:</Typography>

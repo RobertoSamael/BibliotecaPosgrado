@@ -30,7 +30,6 @@ const initialState = {
             );
         })
         }
-        //Dado el action payload, devolver un arreglo con todos los libros iguales al actionpayload
     },
 });
 export const { setLibro, libroSelected, setLibrosFiltrados, setCategoriaFiltrada } = bookSlice.actions
